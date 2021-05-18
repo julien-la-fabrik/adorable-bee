@@ -17,8 +17,8 @@ export const query = graphql`
 `;
 
 export default class Blog extends React.Component {
-    console.log(this.props.pageContext.pages);
     render() {
+    console.log(this.props.pageContext.pages);
         let col_number = _.get(this.props, 'pageContext.frontmatter.col_number', null) || 'three';
         let posts_sorted = _.orderBy(getPages(this.props.pageContext.pages, '/blog'), 'frontmatter.date', 'desc');
         return (
